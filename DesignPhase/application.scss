@@ -5,10 +5,9 @@ body {
 h1 {
   color: red;
 }
+
 a {
-  color: #330033; }
-  a:hover {
-    color: #990000; }
-  a:visited {
-    color: #3366ff; }
+  color: #330033;
+  &:hover { color: #990000; }
+  &:visited { color: #3366ff; }
 }
