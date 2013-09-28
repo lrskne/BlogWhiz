@@ -43,3 +43,16 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem 'minitest-rails', git: 'https://github.com/blowmage/minitest-rails.git'
+  gem 'minitest'
+  gem 'ZenTest'
+end
+
+# lbelater - Mike Moore video - has help with integration of Capybara 29:22 and
+# I have notes too. See https://github.com/blowmage/minitest-rails-capybara
+
+group :test do
+  gem "minitest-rails-capybara"
+end
