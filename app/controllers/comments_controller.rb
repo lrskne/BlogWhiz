@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+
+  # line for very basic authentication
+  http_basic_authenticate_with name: "lbe", password: "lbe",
+      only: [:destroy, :edit]
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(params[:comment].permit(:author, :body))

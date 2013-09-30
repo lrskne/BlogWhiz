@@ -52,7 +52,14 @@ anim id est laborum. ")
 
 Comment.create(post_id: 1, author: "Laura authored", body: "comment table body 1")
 
-Post.create(title: "Post seed 2", content: "post table content 2")
+Post.create(title: "Post seed 2", content: "post table content 2 - Lorem i
+psum dolor sit amet, consectetur adipisicing
+elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+anim id est laborum. ")
 Comment.create(post_id: 2, author: "Laura authored", body: "comment table body 2")
 
 
