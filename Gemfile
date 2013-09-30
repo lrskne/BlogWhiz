@@ -44,10 +44,19 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# notes on use of annotate gem
+# (for full notes see https://github.com/ctran/annotate_models)
+# annotate --exclude tests,fixtures,factories
 group :development, :test do
   gem 'minitest-rails', git: 'https://github.com/blowmage/minitest-rails.git'
   gem 'minitest'
   gem 'ZenTest'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'sextant'
+  gem 'meta_request'
+  gem 'annotate'
+
 end
 
 # lbelater - Mike Moore video - has help with integration of Capybara 29:22 and

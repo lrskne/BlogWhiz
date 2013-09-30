@@ -6,8 +6,41 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # lbelater - get rid of stubbed seed scaffold comments above, not needed!
+# lbelater: Post - title, content
+# lbelater: Comment - author, body
+# params = {
+#   c:  {title: "Post seed one", content: "Post one content",
+#         comments_attributes:
+#       { author: "Memyself", body: "this is a great post one comment one"}
+#       }
+# }
 
-Post.create(title: 'Post seed one', content: "Post one content ")
-Post.create(title: 'Post seed two', content: "Post two content ")
-Post.create(title: 'Post seed three', content: "Post three content ")
-Post.create(title: 'Post seed four', content: "Post four content ")
+# Person.create([
+#     {first_name: "Laura", last_name: "Erskine", phone:"425-888-9999"},
+#     {first_name: "Mark",  last_name: "Erskine", phone:"206-444-8888"}
+# ])
+
+# Address.create([
+#   {person_id: 1, street_address: "10203 NE 22nd Place", city: "Bellevue", state: "WA", zip: "98004"},
+#   {person_id: 2, street_address: "111 Elm Street"     , city: "Seattle",  state: "WA", zip: "98004"}
+# ])
+
+
+# post = Post.create(params[:c])
+
+# Another way
+#5.times do |i|
+#  Product.create(name: "Product ##{i}", description: "A product.")
+#end
+
+#5.times do |i|
+#  Post.create(title: "Post seed ##{i}", content: "post table content ##{i}")
+#  Comment.create(post_id: ##{i}, body: "comment table body ##{i}")
+#end
+Post.create(title: "Post seed 1", content: "post table content 1")
+Comment.create(post_id: 1, body: "comment table body 1")
+
+Post.create(title: "Post seed 2", content: "post table content 2")
+Comment.create(post_id: 2, body: "comment table body 2")
+
+
