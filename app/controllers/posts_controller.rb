@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  #lbelater -get rid of json stuff
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -15,45 +14,29 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-
   def edit
   end
 
-
   def create
     @post = Post.new(post_params)
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @post }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to @post, notice: 'Post was successfully created.'
+    else
+      render action: 'new'
     end
   end
-
 
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update(post_params)
+      redirect_to @post, notice: 'Post was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
-
 
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :no_content }
-    end
+    redirect_to posts_url
   end
 
   private
@@ -61,7 +44,6 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-
 
     def post_params
       params.require(:post).permit(:title, :content)
