@@ -1,10 +1,29 @@
 BlogWhiz::Application.routes.draw do
+
+
+
+  #lbelater make sure works (next line) get "/about-us", to: "welcome#about", as: :about
+  get "/about", to: "static_pages#about", as: "about"
+
+  get "users/new"
+
   resources :posts do
     resources :comments
   end
 
   get "home/index"
   root "home#index"
+
+
+  get "/dashboard", to: "dashboard#static"
+
+
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:create]
+
+
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

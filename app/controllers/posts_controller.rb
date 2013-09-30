@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  before_action :user_logged_in!
 
   http_basic_authenticate_with name: "lbe", password: "lbe",
     except: [:index, :show, :new]

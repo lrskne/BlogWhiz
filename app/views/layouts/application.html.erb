@@ -6,9 +6,35 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+<nav id="primary">
+  <ul>
+    <li><%= link_to "Home", controller: "home" %></li>
+    <li><%= link_to "About", about_path %></li>
+    <li><a href="#">Photos-coming soon!</a></li>
+    <li><%= link_to "All Post", controller: "posts" %></li>
+  </ul>
+</nav>
+
+<header id="main">
+  <h1>
+  <p>This blog created totally in Ruby on Rails, for Code Fellows Class - create a blog, work on it! From basic
+  post, to user registration and so forth! Have fun!</p>
+  </h1>
+</header>
 <body>
 
-<%= yield %>
+  <% if current_user.present? %>
+    Welcome <%= current_user.email %>! |  <%= link_to "Sign Out", logout_path %></br>
+  <% else %>
+    <%= link_to "Register", new_user_path %> |  <%= link_to "Sign in", login_path %>
+  <% end %>
+
+  <%= notice %>
+  <%= alert %>
+
+
+
+  <%= yield %>
 
 </body>
 </html>
