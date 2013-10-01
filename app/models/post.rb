@@ -7,10 +7,12 @@
 #  content    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  category   :string(15)
 #
 
 class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
-  #lbelater - add more validation
+
   validates :title, presence: true
+
 end

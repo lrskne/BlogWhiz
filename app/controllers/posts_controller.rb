@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
 
   before_action :user_logged_in!
+  # lbelater future ennhancement:
+  # before_action :admin_logged_in! , only: [:new, :create, :edit, :update, :destroy]
 
-  http_basic_authenticate_with name: "lbe", password: "lbe",
-    except: [:index, :show, :new]
+  #http_basic_authenticate_with name: "lbe", password: "lbe",
+  #  except: [:index, :show]
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -51,6 +53,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :category)
     end
 end

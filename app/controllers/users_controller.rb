@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = "Sucessfully registered user!"
-
       sign_in @user
       redirect_to root_url
     else

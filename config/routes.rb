@@ -1,8 +1,5 @@
 BlogWhiz::Application.routes.draw do
 
-
-
-  #lbelater make sure works (next line) get "/about-us", to: "welcome#about", as: :about
   get "/about", to: "static_pages#about", as: "about"
 
   get "users/new"

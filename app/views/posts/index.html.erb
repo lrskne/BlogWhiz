@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>BlogWhiz</title>
-  <link rel="stylesheet" type="text/css" href="application.css">
-</head>
-<nav id="primary">
-  <ul>
-    <li><%= link_to "Home", controller: "home" %></li>
-    <li><a href="#">About-coming soon!</a></li>
-    <li><a href="#">Photos-coming soon!</a></li>
-    <li><%= link_to "All Post", controller: "posts" %></li>
-  </ul>
-</nav>
-
-<header id="main">
-  <h1>
-  <p>This is a blog about the path to create this blog. This will be on most pages</p>
-  </h1>
-</header>
-
-<h1>Listing All Posts</h1>
+<h2>Listing All Posts</h2>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
+      <th>Category</th>
       <th>Content</th>
       <th></th>
       <th></th>
@@ -38,6 +17,7 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
+        <td><%= post.category %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

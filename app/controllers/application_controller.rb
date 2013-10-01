@@ -15,6 +15,12 @@ class ApplicationController < ActionController::Base
     redirect_to login_url
   end
 
+  def admin_logged_in!
+    return if current_user.admin?
+    flash[:alert] = "Please sign in to view the resource!"
+    redirect_to login_url
+  end
+
   def current_user
     #User.find_by id: session[:user_id] if session[:user_id]
     @current_user ||= User.find_by id: session[:user_id] if session[:user_id]

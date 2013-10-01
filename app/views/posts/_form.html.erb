@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>BlogWhiz</title>
-  <link rel="stylesheet" type="text/css" href="application.css">
-</head>
-<nav id="primary">
-  <ul>
-    <li><%= link_to "Home", controller: "home" %></li>
-    <li><a href="#">About-coming soon!</a></li>
-    <li><a href="#">Photos-coming soon!</a></li>
-    <li><%= link_to "All Post", controller: "posts" %></li>
-  </ul>
-</nav>
-
-<header id="main">
-  <h1>
-  <p>This is a blog about the path to create this blog. This will be on most pages</p>
-  </h1>
-</header>
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -37,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category%>
+  </div>
+  <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
@@ -44,3 +27,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+
